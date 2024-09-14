@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+   <style>
+    #card{
+      display: flex;
+      flex-wrap: wrap;
+    
+   </style>
+  
+  </head>
+
+
+
+
+  <body>
+    <center>
+      <div id="card">
+      <!--<div class="card" style="width: 18rem;">
+        <img src="https://picsum.photos/200/300" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card text"> description</p>
+          <p class="category"> category</p>
+          <p class="price"> price</p>
+        </div>
+      </div>-->
+      </div>
+
+
+
+
+
+    </center>
+    <script>
+fetch("https://fakestoreapi.com/products")
+.then((data) => {
+  //consloe.log(data);
+return data.json();//get in json chage into object
+})
+.then((completedata) => {
+  let data1 = "";
+  completedata.map((values) => {
+    data1 += `<div class="card"style="width:"500px;">
+        <h1 class="title">${values.title}</h1>
+      <img src=${values.image}>
+      <div>
+        <P>${values.description}</P>
+        <P>${values.category}</P>
+        <P>${values.price}</P>
+        </div>
+        </div>`;
+  });
+  document.getElementById("card").innerHTML = data1;
+
+})
+.catch ((err) =>{
+  console.log(err);
+
+});
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title> js</title>
+</head>
+<body>
+    <label>first input</label>
+    <input type="text" name="a" id="first"> <br></br>
+
+    <label>second input</label>
+    <input type="text" name="b" id="second"> <br></br>
+<button onclick="check()">click here</button>
+
+   <script>
+    function check(){
+        var a=document.getElementById("first").value;
+
+        var b=document.getElementById("second").value;
+
+        if ( a==b)
+        {document.write("correct");
+       } else {
+        document.write("incorrect");
+       }
+
+    }
+
+
+
+
+    let month= ["jan", "feb" , "march"];
+    let [jan,feb]=month;
+    console.log(jan,feb);
+    console.log(month)
+
+    
+
+    </script>
+    
+</body>
+</html>
